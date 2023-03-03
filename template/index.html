@@ -1,0 +1,30 @@
+
+<DOCTYPE html>
+
+<title>Diabetes Predictor</title>
+</head>
+
+<h1>Diabetes Predictor</h1>
+
+<form action="/" method="POST">
+<label for="glucose">Glucose level:</label>
+<input type="number" step="0.1" id="glucose" name="glucose" required><br>
+
+<label for="bp">Blood Pressure:</label>
+<input type="number" id="bp" name="bp" required><br>
+
+<label for="bmi">BMI:</label>
+<input type="number" step="0.1" id="bmi" name="bmi" required><br>
+
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" required><br>
+
+<button type="submit">Predict</button>
+</form>
+
+{% if prediction is defined %}
+style="color: {{ 'red' if prediction else 'green' }};">{{ message }}</p>
+{% endif %}
+
+</body>
+</html>
